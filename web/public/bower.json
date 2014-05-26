@@ -1,0 +1,9 @@
+{
+  "name": "social_media_login_examples",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "bootstrap"                : "latest",
+    "fontawesome"              : "latest"
+  }
+}
