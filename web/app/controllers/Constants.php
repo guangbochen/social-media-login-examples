@@ -2,9 +2,9 @@
 class Constants
 {
   //Defines Google+ APP configurations
-  const GOOLE_CLIENT_ID  = '180546601572-fq1ocjub63ve9ce3h24923ebodsrfrpl.apps.googleusercontent.com';
-  const APPLICATION_NAME = 'Login to GroupDiner.com';
-  const CLIENT_SECRET    = 'd0uI6NK0pNVG74lMyhPMcmRO';
+  const GOOLE_CLIENT_ID  = '54156461767-s7amdng36k59v207con5g1vpdjd5s65l.apps.googleusercontent.com';
+  const APPLICATION_NAME = 'Social Media Login Examples';
+  const CLIENT_SECRET    = 'A0ovNzTnMth1Cfw-yTb-o5mJ';
 
   //Defines Facebook APP configurations
   const FB_APPID         = '721902757848729';

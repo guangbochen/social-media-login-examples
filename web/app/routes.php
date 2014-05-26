@@ -19,4 +19,5 @@ Route::get('dashboard', 'HomeController@getDashboard');
 // APIS controller
 Route::group(array('prefix' => 'api'), function() {
   Route::post('signin/fb', 'api\FacebookApisController@signInWithFacebook');
+  Route::post('signin/google', 'api\GoogleApisController@signInWithGoogle');
 });

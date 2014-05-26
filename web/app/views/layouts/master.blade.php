@@ -5,7 +5,6 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Social Meida Login Example with Laravel</title>
-
 <!-- load css -->
 <link href="/css/main.css" type="text/css" rel="stylesheet" >
 @section('head')

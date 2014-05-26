@@ -8,6 +8,7 @@
   <center class="jumbotron">
     <h2>Login With Facebook or Google </h2>
     @include('login_google')
+    <div class="btn-sperator"></div>
     @include('login_fb')
   </center>
 @stop

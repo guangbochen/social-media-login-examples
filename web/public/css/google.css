@@ -1,7 +1,6 @@
-#fb_btn {
+#google_sign_btn {
   display: inline-block;
-  background-color: #4063b3;
-  background-image: linear-gradient(#4063b3, #3c599d);
+  background: #dd4b39;
   color: white;
   width: 244px;
   border-radius: 3px;
@@ -9,20 +8,20 @@
   cursor: pointer;
   box-shadow: 0 1px 2px 0 rgba(0,0,0,0.18),inset 0 0 1px 1px rgba(255,255,255,0.09);
 }
-#fb_btn:hover {
-  background-color: #4368be;
-  background-image: linear-gradient(#4368be, #405fa7);
+#google_sign_btn:hover {
+  background: #e74b37;
 }
-span.fb_icon {
+span.g_icon {
+  /* background: url('') transparent 5px 50% no-repeat; */
   display: inline-block;
   vertical-align: middle;
   width: 45px;
   height: 40px;
-  border-right: 1px solid #40598b;
+  border-right: #bb3f30 1px solid;
   padding-top: 8px;
 }
 
-span.fb_buttonText {
+span.g_buttonText {
   display: inline-block;
   vertical-align: middle;
   padding-left: 35px;
@@ -30,6 +29,6 @@ span.fb_buttonText {
   font-size: 14px;
   font-weight: 400;
 }
-.fa-facebook {
+.fa-google {
   font-size: 30px;
 }

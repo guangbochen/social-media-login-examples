@@ -17,7 +17,7 @@ class HomeController extends BaseController {
 
   public function index()
   {
-    if (\Auth::check())
+    if (Auth::check())
     {
       return Redirect::to('dashboard');
     }
@@ -29,7 +29,7 @@ class HomeController extends BaseController {
       Session::put('state', $state);
       return View::make ('login', array(
         'GOOLE_CLIENT_ID' => Constants::GOOLE_CLIENT_ID,
-        'FB_APP_ID' => \Constants::FB_APPID,
+        'FB_APP_ID' => Constants::FB_APPID,
         'STATE' => $state
       ));
     }
@@ -43,7 +43,7 @@ class HomeController extends BaseController {
       // The user is logged in...
       $user = Auth::user();
       $email = $user->email;
-      $gravatar = \GravatarHelper::get_gravatar ($email);
+      $gravatar = GravatarHelper::get_gravatar ($email);
       return View::make ('dashboard')
         ->with('gravatar', $gravatar)
         ->with('user', $user);

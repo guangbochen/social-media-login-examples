@@ -34,33 +34,25 @@ class FacebookApisController extends \BaseController
   {
     $input = json_decode(json_encode(Input::all()));
 
-    // Ensure that this is no request forgery via state
+    // Ensure that this is no request forgery via validate state token
     if ($input->state != (Session::get('state'))) 
     {
       return JsonHandler::raiseError ('Invalid state parameter', 401);
     }
 
-    //erase the state token after using it
-    Session::put('state','');
-
+    //initialise facebook Session 
     $this->fb_session = new FacebookSession($input->fb_access_token);
 
     // Get the GraphUser object for the current user:
-    try {
-      $profile = (new FacebookRequest(
-        $this->fb_session, 'GET', '/me'
-      ))->execute()->getGraphObject(GraphUser::className());
+    $profile = (new FacebookRequest(
+      $this->fb_session, 'GET', '/me'
+    ))->execute()->getGraphObject(GraphUser::className());
 
-      // user has successfully connected with token,
-      // register as new user if not exist then login into the app
-      $user = FacebookApisController::registerFacebookUser($profile);
-      \Auth::login($user);
-      return Redirect::to('/dashboard');
-
-    } catch (\Exception $e) {
-      // return error from the Graph API or our server
-      return JsonHandler::raiseError ($e->getMessage(), 500);
-    }
+    // user has successfully connected with token,
+    // register as new user if not exist then login into the app
+    $user = FacebookApisController::register($profile);
+    \Auth::login($user);
+    return Redirect::to('/dashboard');
   }
 
   /**
@@ -68,7 +60,7 @@ class FacebookApisController extends \BaseController
    * @param $profile, fb user profile
    * @return user object
    */
-  public function registerFacebookUser($profile)
+  public function register($profile)
   {
     $email = $profile->getProperty('email');
     $is_user  = \User::where('email', $email)->first();

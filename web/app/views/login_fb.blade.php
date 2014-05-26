@@ -43,15 +43,13 @@
   the JavaScript SDK to present a graphical Login button that triggers
   the FB.login() function when clicked.
 -->
-<div>
-  <a href="#" onclick="fb_login();" class="fb-button">
-    <i class="fa fa-facebook"></i>
-    <div class="fb-text-container">
-      Sign in with Facebook
-    </div>
-  </a>
-  <form action="api/signin/fb" method="post" id="fb_login_form" class="hidden">
-    <input type="text" class="hidden" name="fb_access_token" id="fb_token">
-    <input type="text" class="hidden" name="state" value="{{ $STATE }}">
-  </form>
+<div id="fb_btn" onclick="fb_login();">
+  <span class="fb_icon"><i class="fa fa-facebook"></i></span>
+  <span class="fb_buttonText">Sign in with facebook</span>
 </div>
+
+<!-- hidden fb login form -->
+<form action="api/signin/fb" method="post" id="fb_login_form" class="hidden">
+  <input type="text" class="hidden" name="fb_access_token" id="fb_token">
+  <input type="text" class="hidden" name="state" value="{{ $STATE }}">
+</form>

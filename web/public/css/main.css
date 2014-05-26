@@ -1,6 +1,7 @@
 @import url("/js/vendor/bootstrap/dist/css/bootstrap.min.css");
 @import url("/js/vendor/fontawesome/css/font-awesome.min.css");
 @import url("facebook.css");
+@import url("google.css");
 /* Space out content a bit */
 body {
   padding-top: 20px;
@@ -80,3 +81,8 @@ body {
     border-bottom: 0;
   }
 }
+
+.btn-sperator {
+  padding: 2px;
+}
+
